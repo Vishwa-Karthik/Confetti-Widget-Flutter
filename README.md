@@ -1,16 +1,63 @@
-# confetti_widget
+# Flutter Confetti Widget
 
-A new Flutter project.
+A simple flutter's confetti widget
 
-## Getting Started
+## Add Dependency
+```bash
+flutter pub add confetti
+```
 
-This project is a starting point for a Flutter application.
+## Sample
+<p><img alt="gif" align="center" src="https://github.com/Vishwa-Karthik/Confetti-Widget-Flutter/blob/master/confetti.gif" width=200 height=400 />
+<p/>
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Code
+```dart
+return Stack(
+      alignment: Alignment.topCenter,
+      children: [
+        Scaffold(
+          appBar: AppBar(
+            title: const Text(
+              "C O N F E T T I",
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            centerTitle: true,
+          ),
+          body: Center(
+              child: MaterialButton(
+            onPressed: () {
+              if (isPlay) {
+                _controller.stop();
+              } else {
+                _controller.play();
+              }
+              isPlay = !isPlay;
+            },
+            color: Colors.deepPurple[100],
+            child: const Text("Click me"),
+          )),
+        ),
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Widget Code
+```dart
+ConfettiWidget(
+          confettiController: _controller,
+          blastDirection: -pi / 2,
+          colors: const [Colors.deepPurple, Colors.black, Colors.yellow],
+          gravity: 0.7,
+          emissionFrequency: 0.2,
+        )
+```
+
+
+
+
+## Reference
+Pub.dev : [Confetti Widget](https://pub.dev/packages/confetti)
+
+
+
+
